@@ -90,6 +90,21 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 400px) {
+    .game-start {
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+
+    .information {
+        padding: 0 2rem;
+    }
+
+    .clouds {
+        animation: clouds-animation-mobile 10s linear infinite;
+    }
+}
+
 /* animations */
 @keyframes clouds-animation {
     from {
@@ -98,6 +113,16 @@
 
     to {
         right: 820px;
+    }
+}
+
+@keyframes clouds-animation-mobile {
+    from {
+        right: -380px;
+    }
+
+    to {
+        right: 380px;
     }
 }
 
