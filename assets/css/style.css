@@ -7,3 +7,62 @@
     box-sizing: border-box;
     font-family: "Concert One", sans-serif;
 }
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    max-width: 800px;
+    height: 600px;
+    margin: 5% auto 1%;
+    background: rgb(156,243,250);
+    background: linear-gradient(0deg, rgba(156,243,250,1) 0%, rgba(63,188,221,1) 34%, rgba(42,159,190,1) 100%);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom: 10px solid #47ba66;
+}
+
+.clouds {
+    position: absolute;
+    width: 380px;
+    top: 50px;
+    animation: clouds-animation 15s linear infinite;
+}
+
+.score {
+    position: fixed;
+    top: 6px;
+    right: 12px;
+    background-color: #414141;
+    padding: 4px 12px 8px;
+    border-radius: 10px;
+}
+
+.score p {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.information {
+    width: 100%;
+    text-align: center;
+}
+
+.information p {
+    color: #737373;
+}
+
+.information p span {
+    color: #ed82bd;
+}
+
+/* animations */
+@keyframes clouds-animation {
+    from {
+        right: -380px;
+    }
+
+    to {
+        right: 820px;
+    }
+}
