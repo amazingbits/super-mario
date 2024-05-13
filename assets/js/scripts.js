@@ -12,6 +12,10 @@ function transformValueWithPixelInNumber(stringValueWithPixel) {
     return Number(Number(stringValueWithPixel.replace("px", "")).toFixed(2));
 }
 
+function detectTouchInScreen() {
+    return window.ontouchstart !== undefined;
+}
+
 function distanceAdd() {
     const currentScore = Number(distance.innerHTML);
     distance.innerHTML = `${currentScore + 1}`;
@@ -87,7 +91,7 @@ function createStartButton() {
 
 function keyBoardEventHandler(event) {
     const key = event.keyCode;
-    if (availableKeyboardKeysToPress.includes(key)) {
+    if (availableKeyboardKeysToPress.includes(key) || detectTouchInScreen()) {
         jump();
     }
 }
