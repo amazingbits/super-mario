@@ -29,7 +29,7 @@
     animation: clouds-animation 15s linear infinite;
 }
 
-.score {
+.distance {
     position: fixed;
     top: 6px;
     right: 12px;
@@ -38,7 +38,7 @@
     border-radius: 10px;
 }
 
-.score p {
+.distance p {
     color: #fff;
     font-size: 1rem;
 }
@@ -56,6 +56,40 @@
     color: #ed82bd;
 }
 
+.mario {
+    position: absolute;
+    z-index: 2;
+    width: 120px;
+    bottom: 0;
+    left: 0;
+}
+
+.pipe {
+    position: absolute;
+    z-index: 2;
+    width: 80px;
+    bottom: 0;
+    animation: pipe-animation 3.5s linear infinite;
+}
+
+.jump {
+    animation: jump 800ms ease;
+}
+
+.game-start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #414141;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px;
+    font-size: 1.8rem;
+    border-radius: 20px;
+    animation: button-animation 1s infinite;
+    cursor: pointer;
+}
+
 /* animations */
 @keyframes clouds-animation {
     from {
@@ -64,5 +98,51 @@
 
     to {
         right: 820px;
+    }
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 800px;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    25% {
+        bottom: 160px;
+    }
+
+    50% {
+        bottom: 160px;
+    }
+
+    85% {
+        bottom: 160px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes button-animation {
+    0% {
+        transform: translateY(-10%) translateX(-50%);
+    }
+
+    50% {
+        transform: translateY(-25%) translateX(-50%);
+    }
+
+    100% {
+        transform: translateY(-10%) translateX(-50%);
     }
 }
