@@ -7,12 +7,13 @@ let currentPipe;
 let currentLoop;
 let gameStartButton;
 let keyBoardEvent;
+let touchEvent;
 
 function transformValueWithPixelInNumber(stringValueWithPixel) {
     return Number(Number(stringValueWithPixel.replace("px", "")).toFixed(2));
 }
 
-function detectTouchInScreen() {
+function isTouchDevice() {
     return window.ontouchstart !== undefined;
 }
 
@@ -91,7 +92,13 @@ function createStartButton() {
 
 function keyBoardEventHandler(event) {
     const key = event.keyCode;
-    if (availableKeyboardKeysToPress.includes(key) || detectTouchInScreen()) {
+    if (availableKeyboardKeysToPress.includes(key)) {
+        jump();
+    }
+}
+
+function touchEventHandler(event) {
+    if(isTouchDevice()) {
         jump();
     }
 }
@@ -100,8 +107,13 @@ function createKeyboardEvent() {
     keyBoardEvent = document.addEventListener("keyup", keyBoardEventHandler);
 }
 
+function createTouchEvent() {
+    touchEvent = document.addEventListener("touchstart", touchEventHandler);
+}
+
 function startGame() {
     createKeyboardEvent();
+    createTouchEvent();
     clearDistance();
     wrapper.innerHTML = "";
     createClouds();
@@ -124,6 +136,7 @@ function gameOver() {
     stopCloudsAnimation();
     clearInterval(currentLoop);
     document.removeEventListener("keyup", keyBoardEventHandler);
+    document.removeEventListener("touchstart", touchEventHandler);
     setTimeout(() => {
         createStartButton();
     }, 1000);
