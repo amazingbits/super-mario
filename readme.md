@@ -19,6 +19,12 @@ Trata-se de um jogo baseado no `T-Rex Dinosaur` da página offline do Google Chr
 
 Quando jogado no navegador desktop, basta apertar `seta para cima` ou `barra de espaço` para pular. Se estiver jogando no navegador de um dispositivo mobile, basta `tocar na tela`.
 
+#### Print do jogo
+
+<div align="center">
+    <img src="https://i.ibb.co/LxwBMVk/mario.jpg" alt="jogo" style="border-radius:10px;" width="380px" />
+</div>
+
 #### Acesso ao jogo
 
 <p>Project page: <a href="https://amazingbits.github.io/super-mario/" target="_blank">Super Mario Jump</a></p>
